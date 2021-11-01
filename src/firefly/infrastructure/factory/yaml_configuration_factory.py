@@ -85,6 +85,7 @@ class YamlConfigurationFactory(ffd.ConfigurationFactory):
     def _parse(data: str):
         path_matcher = re.compile(r'.*(\$\{([^}^{]+)\}).*')
 
+        print("THIS IS OS ENVIRON", os.environ)
         def path_constructor(_, node):
             value = node.value
             match = path_matcher.match(value)
